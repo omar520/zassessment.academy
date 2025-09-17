@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>The Tech Assessment | Test Your Skills & Find Your Path</title>
+    <meta name="description" content="Test your coding level in 3 minutes with our free assessment. The Tech Assessment offers personalized, mentor-led tracks to help you land your first junior developer role.">
+    <meta name="keywords" content="coding academy, learn to code, web development bootcamp, software engineering, free coding test, tech career">
+    <meta name="author" content="The Tech Assessment">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <!-- Lottie Animation Player -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#4f46e5',
+                            light: '#6366f1',
+                            dark: '#4338ca',
+                        },
+                        secondary: {
+                            DEFAULT: '#10b981',
+                            light: '#34d399',
+                            dark: '#059669',
+                        }
+                    },
+                    keyframes: {
+                        pulseHighlight: {
+                            '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(79, 70, 229, 0.4)' },
+                            '50%': { transform: 'scale(1.01)', boxShadow: '0 0 0 12px rgba(79, 70, 229, 0)' }
+                        },
+                        fadeIn: {
+                            'from': { opacity: '0' },
+                            'to': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        pulseHighlight: 'pulseHighlight 2s ease-in-out',
+                        fadeIn: 'fadeIn 0.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style type="text/css">
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+      <!-- Mixpanel Tracking Code -->
+  <script type="text/javascript">
+    (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split( " "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat( Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+    mixpanel.init("6f57cf167348247cdff64c869fac2c48");
+  </script>
+</head>
+<body class="font-poppins bg-stone-50 text-stone-800 antialiased">
+
+    <!-- =================================================================
+    ANNOUNCEMENT BAR
+    ================================================================== -->
+    <div class="bg-indigo-600 text-white text-center p-2 text-sm font-medium">
+        <span>Ready to find your starting point? </span>
+        <a href="#" data-label="announcement_test" class="underline hover:text-indigo-200 transition-colors duration-300">Take Your Free Assessment Now</a>
+    </div>
+
+    <!-- =================================================================
+    HEADER / NAVIGATION
+    ================================================================== -->
+    <header id="main-header" class="bg-stone-50/80 backdrop-blur-lg sticky top-0 z-40 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[110px]">
+                <!-- .header__logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-primary">
+                    <img src="logo.svg" alt="The Tech Assessment Logo" class="h-16 w-auto"></a>
+                </div>
+
+                <!-- .header__nav-links (hidden on mobile) -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#about" class="text-stone-600 hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 inline-block">About</a>
+                    <a href="#assessments" class="text-stone-600 hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 inline-block">Assessments</a>
+                    <a href="#faq" class="text-stone-600 hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 inline-block">FAQ</a>
+                </div>
+
+                <!-- .header__actions -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" data-label="header_test" class="hidden sm:inline-block bg-primary text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark transition-all duration-300 transform hover:scale-105">
+                        Take Free Test
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 text-stone-600 hover:text-primary" aria-label="Open menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+            <a href="#about" class="block text-stone-600 hover:text-primary transition-colors py-2">About</a>
+            <a href="#assessments" class="block text-stone-600 hover:text-primary transition-colors py-2">Assessments</a>
+            <a href="#faq" class="block text-stone-600 hover:text-primary transition-colors py-2">FAQ</a>
+            <a href="#" data-label="header_test_mobile" class="block bg-primary text-white text-center font-semibold mt-2 px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark transition-all duration-300">
+                Take Free Test
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================
+        HERO SECTION
+        ================================================================== -->
+        <section id="hero" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- .hero__content -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 leading-tight">
+                            Test Your Coding Level in <span class="text-primary">3 Minutes</span>
+                        </h1>
+                        <p class="mt-6 text-lg text-stone-600 max-w-xl mx-auto md:mx-0">
+                            Get an instant, unbiased snapshot of your skills—and a clear, personalized career path. No commitment.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#" data-label="hero_test" class="bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                                Take the Free Test
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- .hero__illustration -->
+                    <div class="hidden md:flex items-center justify-center">
+                        <dotlottie-wc src="https://lottie.host/b6d3b302-a86a-45e6-863a-d66b81ed3a67/GoGmD9d1RR.lottie" style="width: 400px; height: 400px" speed="1" autoplay loop></dotlottie-wc>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        WHAT IS THE ASSESSMENT?
+        ================================================================== -->
+        <section id="about" class="py-16 md:py-24 bg-stone-100 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-stone-900">What is The Assessment?</h2>
+                    <p class="mt-4 text-lg text-stone-600 max-w-3xl mx-auto">It's more than a test—it's your personalized entry point into the tech world. In just a few minutes, you'll get a clear, unbiased picture of your current skills and the ideal path forward.</p>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="flex items-start space-x-4 p-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center"><i class="fa-solid fa-bolt-lightning text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Instant Results</h4>
+                            <p class="mt-1 text-stone-600">No waiting. Get your score and a detailed analysis immediately after you finish.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-chart text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Skill Gap Analysis</h4>
+                            <p class="mt-1 text-stone-600">Understand exactly where you stand and what specific skills you need to develop.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center"><i class="fa-solid fa-route text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Personalized Path</h4>
+                            <p class="mt-1 text-stone-600">Receive a tailored recommendation for the most suitable learning journey for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        EXPLORE ASSESSMENTS
+        ================================================================== -->
+        <section id="assessments" class="py-16 md:py-24 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Find Your Starting Point</h2>
+                    <p class="mt-4 text-lg text-stone-600 max-w-2xl mx-auto">We offer a range of specialized assessments designed to match your career ambitions. Choose a track to begin.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">DevOps</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Test your skills in infrastructure, deployment, and automation.</p>
+                        <button data-label="assessment_popup_devops" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Data Analysis</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Assess your knowledge of SQL, data wrangling, and visualization.</p>
+                        <button data-label="assessment_popup_data" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">CyberSecurity</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Challenge your understanding of networks, threats, and defense.</p>
+                        <button data-label="assessment_popup_cyber" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Back-End</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Evaluate your command of server-side logic, databases, and APIs.</p>
+                        <button data-label="assessment_popup_backend" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                     <!-- Assessment Card -->
+                     <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Product Manager</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Test your product sense, strategy, and execution skills.</p>
+                        <button data-label="assessment_popup_pm" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Machine Learning</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Assess your grasp of models, algorithms, and frameworks like TensorFlow.</p>
+                        <button data-label="assessment_popup_ml" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Flutter Developer</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Evaluate your ability to build beautiful, cross-platform mobile apps.</p>
+                        <button data-label="assessment_popup_flutter" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                    <!-- Assessment Card -->
+                    <div class="group bg-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-5xl text-primary mb-4 transition-transform duration-300 group-hover:animate-bounce">
+                           <i class="fa-solid fa-display"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary">Front-End</h3>
+                        <p class="mt-2 text-stone-600 flex-grow text-sm">Test your expertise in HTML, CSS, JavaScript, and modern frameworks.</p>
+                        <button data-label="assessment_popup_frontend" class="mt-6 w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors">Take Test</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        TESTIMONIALS
+        ================================================================== -->
+        <section id="testimonials" class="py-16 md:py-24 bg-stone-100 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Why Developers Start Here</h2>
+                </div>
+                <div id="testimonial-slider" class="mt-12 relative max-w-3xl mx-auto" role="region" aria-label="Testimonials">
+                    <div class="overflow-hidden">
+                        <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Testimonial Item -->
+                            <div class="testimonial-item flex-shrink-0 w-full p-4 text-center">
+                                <p class="text-xl italic text-stone-700">"The initial assessment was incredibly accurate. It pinpointed my weaknesses and showed me exactly where to start my learning journey."</p>
+                                <p class="mt-4 font-semibold text-stone-900">- Ahmed Ali, Aspiring Full-Stack Developer</p>
+                            </div>
+                            <!-- Testimonial Item -->
+                            <div class="testimonial-item flex-shrink-0 w-full p-4 text-center">
+                                <p class="text-xl italic text-stone-700">"I was lost and didn't know which path to take. The 3-minute test gave me a clear, personalized roadmap. It was a huge confidence booster!"</p>
+                                <p class="mt-4 font-semibold text-stone-900">- Sara Mahmoud, Career Changer</p>
+                            </div>
+                            <!-- Testimonial Item -->
+                            <div class="testimonial-item flex-shrink-0 w-full p-4 text-center">
+                                <p class="text-xl italic text-stone-700">"Forget generic courses. The assessment is the perfect first step. It ensures you don't waste time on things you already know or are not ready for."</p>
+                                <p class="mt-4 font-semibold text-stone-900">- Mohammed Hassan, Recent Graduate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-arrow prev absolute top-1/2 left-0 -translate-y-1/2 -translate-x-8 text-2xl text-stone-400 hover:text-primary transition-colors" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="slider-arrow next absolute top-1/2 right-0 -translate-y-1/2 translate-x-8 text-2xl text-stone-400 hover:text-primary transition-colors" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        FAQ SECTION
+        ================================================================== -->
+        <section id="faq" class="py-16 md:py-24 bg-white section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Your Questions Answered</h2>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto space-y-4" id="faq-accordion">
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>Is the assessment really free?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>Yes, 100%. The assessment is completely free and requires no commitment. Its sole purpose is to provide you with valuable insights into your skills.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>What if I get a low score?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>A low score is not a failure! It's valuable data that helps us recommend the perfect foundational learning path for you. Everyone starts somewhere, and knowing your baseline is the first step to success.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>How long does the assessment take?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>Most assessments are designed to be completed in 15-30 minutes. The goal is to get a quick but accurate snapshot of your practical skills without taking up too much of your time.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>What do I get after completing it?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>Immediately upon completion, you will receive your score, a breakdown of your performance by skill area, and a personalized recommendation for the next steps in your learning journey.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>Are the tests timed?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>Yes, each assessment is timed to simulate real-world problem-solving scenarios and to ensure the results accurately reflect your proficiency under normal working conditions.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-stone-50 rounded-lg shadow-sm">
+                        <h3>
+                            <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold p-6 transition-colors duration-300 hover:bg-indigo-50" aria-expanded="false">
+                                <span>Do I need to prepare for the assessment?</span>
+                                <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </h3>
+                        <div class="faq-answer hidden p-6 pt-0 text-stone-600">
+                            <p>No preparation is needed. The goal is to measure your current knowledge. Just come as you are! This allows us to give you the most accurate and helpful recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================================================================
+    FOOTER
+    ================================================================== -->
+    <footer class="bg-stone-800 text-stone-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="flex justify-center sm:justify-start space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">About</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="mt-4 flex justify-center sm:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white transition-transform duration-300 hover:scale-125 inline-block" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-transform duration-300 hover:scale-125 inline-block" aria-label="X/Twitter"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-transform duration-300 hover:scale-125 inline-block" aria-label="GitHub"><i class="fa-brands fa-github text-xl"></i></a>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-sm text-stone-400">&copy; 2025 The Tech Assessment. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- =================================================================
+    TEST SELECTION MODAL
+    ================================================================== -->
+    <div id="test-modal-container" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" aria-labelledby="test-modal-title" role="dialog" aria-modal="true">
+        <!-- Overlay -->
+        <div id="test-modal-overlay" class="fixed inset-0 bg-black/60 animate-fadeIn"></div>
+
+        <!-- Content -->
+        <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col animate-fadeIn">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b border-stone-200">
+                <h2 id="test-modal-title" class="text-2xl font-bold text-stone-900">Choose Your Assessment</h2>
+                <button id="test-modal-close" class="p-2 text-stone-500 hover:text-primary rounded-full" aria-label="Close">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="p-6 overflow-y-auto">
+                <p class="text-stone-600 mb-6">Select the assessment that best matches your career goals to get started.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Test Option: DevOps -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-server text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">DevOps</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:dev-ops-8d3lsvcsbo&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="devops_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Data Analysis -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                         <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-chart-simple text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Data Analysis</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:data-analyst-sql-6jztgh6izb&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="data_analysis_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: CyberSecurity -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">CyberSecurity</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:cyber-security-b44yeoyf56&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="cybersecurity_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Back-End -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-database text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Back-End</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:back-end-developer-h7ut67qy9x&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="backend_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Product Manager -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-clipboard-list text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Product Manager</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:product-manager-jx81f5by6h&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="product_manager_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Machine Learning -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-robot text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Machine Learning</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:machine-learning-tensorflow-is4htuavfv&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="machine_learning_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Flutter Developer -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-mobile-screen-button text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Flutter Developer</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:flutter-developer-ggcw1uywlk&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="flutter_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                    <!-- Test Option: Front-End -->
+                    <div class="bg-stone-50 p-4 rounded-lg flex items-center justify-between transition-all hover:shadow-md hover:bg-indigo-50">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-display text-primary w-5 text-center"></i>
+                            <h3 class="font-semibold text-stone-800">Front-End</h3>
+                        </div>
+                        <a href="https://coderbyte.com/sl-candidate?promo=stemec-4ik2z:front-end-developer-html-40rib13yu4&invb=useruw3e5tl25" target="_blank" rel="noopener noreferrer" data-test-name="frontend_test" class="test-link bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors text-sm">Start Test</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =================================================================
+    JAVASCRIPT
+    ================================================================== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- DATA LAYER & TRACKING ---
+        window.dataLayer = window.dataLayer || [];
+        function track(eventName, payload) {
+            console.log('Tracking Event:', eventName, payload);
+            window.dataLayer.push({ event: eventName, ...payload });
+        }
+
+        // --- GLOBAL STATE & ELEMENTS ---
+        const header = document.getElementById('main-header');
+        const testModalContainer = document.getElementById('test-modal-container');
+        const testModalOverlay = document.getElementById('test-modal-overlay');
+        const testModalClose = document.getElementById('test-modal-close');
+
+
+        // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
+        document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // --- STICKY HEADER ---
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // --- MOBILE MENU ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // --- URL PARAM CHECK FOR `fromTest=fail` ---
+        const checkURLParams = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('fromTest') === 'fail') {
+                track('redirect_from_test', { label: 'fail' });
+                const failBanner = document.getElementById('fail-banner');
+                failBanner.classList.remove('hidden');
+                // You might want to scroll to a relevant section here
+            }
+        };
+        checkURLParams();
+        
+        // --- SECTION REVEAL ON SCROLL ---
+        const revealSections = document.querySelectorAll('.section-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealSections.forEach(section => observer.observe(section));
+
+        // --- FAQ ACCORDION ---
+        const faqAccordion = document.getElementById('faq-accordion');
+        if(faqAccordion){
+            faqAccordion.addEventListener('click', (e) => {
+                const questionButton = e.target.closest('.faq-question');
+                if (!questionButton) return;
+
+                const item = questionButton.closest('.faq-item');
+                const answer = item.querySelector('.faq-answer');
+                const icon = questionButton.querySelector('i');
+                const isExpanded = questionButton.getAttribute('aria-expanded') === 'true';
+
+                questionButton.setAttribute('aria-expanded', !isExpanded);
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        }
+        
+        // --- TESTIMONIAL SLIDER ---
+        const slider = document.getElementById('testimonial-slider');
+        if(slider){
+            const trackEl = document.getElementById('testimonial-track');
+            const items = Array.from(trackEl.children);
+            const prevButton = slider.querySelector('.slider-arrow.prev');
+            const nextButton = slider.querySelector('.slider-arrow.next');
+            let currentIndex = 0;
+            let slideInterval;
+
+            const updateSlidePosition = () => {
+                trackEl.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+
+            const nextSlide = () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateSlidePosition();
+            };
+
+            const prevSlide = () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateSlidePosition();
+            };
+            
+            const startAutoplay = () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            };
+            
+            const stopAutoplay = () => {
+                clearInterval(slideInterval);
+            };
+
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+            slider.addEventListener('mouseenter', stopAutoplay);
+            slider.addEventListener('mouseleave', startAutoplay);
+            
+            startAutoplay();
+        }
+        
+        // --- TEST MODAL LOGIC ---
+        const openTestModal = () => {
+            track('modal_open', { label: 'test_selection' });
+            testModalContainer.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeTestModal = () => {
+            testModalContainer.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        testModalOverlay.addEventListener('click', closeTestModal);
+        testModalClose.addEventListener('click', closeTestModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !testModalContainer.classList.contains('hidden')) {
+                closeTestModal();
+            }
+        });
+
+
+        // --- GLOBAL EVENT DELEGATION FOR CTAs & LINKS ---
+        document.body.addEventListener('click', function(e) {
+            // Test links inside modal
+            const testLink = e.target.closest('.test-link');
+            if (testLink) {
+                track('cta_click', { label: testLink.dataset.testName });
+                return;
+            }
+
+            // All other main CTAs
+            const cta = e.target.closest('[data-label]');
+            if (cta) {
+                e.preventDefault(); 
+                const label = cta.dataset.label;
+                track('cta_click', { label });
+                
+                // Open test modal for any CTA that is supposed to
+                openTestModal();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+

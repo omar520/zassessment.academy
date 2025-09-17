@@ -1,0 +1,38 @@
+services:
+  zassessment-app:
+    image: zassessment-site-local
+    container_name: zassessment-site
+    restart: unless-stopped
+    user: "1001:1001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - stemec-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=stemec-network"
+      
+      # Main HTTPS router for public content
+      - "traefik.http.routers.zassessment.rule=Host(`zassessment.academy`)"
+      - "traefik.http.routers.zassessment.entrypoints=websecure"
+      - "traefik.http.routers.zassessment.tls.certresolver=myresolver"
+      - "traefik.http.routers.zassessment.service=zassessment-service"
+      
+      
+      # Service definition
+      - "traefik.http.services.zassessment-service.loadbalancer.server.port=3000"
+      
+      # HTTP to HTTPS redirect
+      - "traefik.http.routers.zassessment-http.rule=Host(`zassessment.academy`)"
+      - "traefik.http.routers.zassessment-http.entrypoints=web"
+      - "traefik.http.routers.zassessment-http.middlewares=https-redirect"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+      
+
+networks:
+  stemec-network:
+    external: true
+    name: stemec-network

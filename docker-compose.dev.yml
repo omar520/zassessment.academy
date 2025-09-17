@@ -1,0 +1,24 @@
+version: '3.8'
+
+# Development override for docker-compose.yml
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  zassessment-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    ports:
+      - "3001:3000"  # Expose port 3001 on host to avoid conflicts
+    volumes:
+      - .:/app  # Mount source code for development
+      - /app/node_modules  # Preserve node_modules
+    networks:
+      - default  # Use default network instead of external
+    labels: []  # Remove Traefik labels for local development
+
+networks:
+  default:
